@@ -16,6 +16,7 @@
 package examples;
 
 import java.io.File;
+import java.time.Duration;
 import java.time.ZonedDateTime;
 import java.util.Set;
 
@@ -56,7 +57,7 @@ public class GettingStarted {
 	}
 
 	private void processUserZip(String userZip) {
-		int numProcessedEvents = 0;
+		int numProcessedEvents = 0;		
 		// open the .zip file ...
 		try (IReadingArchive ra = new ReadingArchive(new File(eventsDir, userZip))) {
 			// ... and iterate over content.
@@ -119,7 +120,8 @@ public class GettingStarted {
 	private void processBasic(IDEEvent e) {
 		String eventType = e.getClass().getSimpleName();
 		ZonedDateTime triggerTime = e.getTriggeredAt();
+		Duration eventDuration = e.Duration;
 
-		System.out.printf("found an %s that has been triggered at: %s)\n", eventType, triggerTime);
+		System.out.printf("found an %s that has been triggered at: %s with time: %s)\n", eventType, triggerTime, eventDuration);
 	}
 }

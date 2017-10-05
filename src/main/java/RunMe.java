@@ -1,6 +1,7 @@
 
 /**
  * Copyright 2016 University of Zurich
+
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -16,10 +17,14 @@
  */
 
 import examples.GettingStarted;
-import examples.GettingStartedContexts;
+import examples.BasicEventDataToCSV;
+
+//import examples.GettingStartedContexts;
+
+
+import examples.EventToCSV;
 
 public class RunMe {
-
 	/*
 	 * download the interaction data and unzip it into the root of this project (at
 	 * the level of the pom.xml). Unpack it, you should now have a folder that
@@ -35,7 +40,9 @@ public class RunMe {
 
 	public static void main(String[] args) {
 
-		new GettingStarted(eventsDir).run();
-		new GettingStartedContexts(contextsDir).run();
+		//new GettingStarted(eventsDir).run();
+		//new EventToCSV(eventsDir).run();
+		new BasicEventDataToCSV(eventsDir).run();
+		//new GettingStartedContexts(contextsDir).run();		
 	}
 }
